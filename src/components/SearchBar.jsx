@@ -43,7 +43,7 @@ export const SearchBar = () => {
     <SearchWrap>
       <LogoAndTitle>
         <img
-          src={require("../images/icon_logo(주황).png")}
+          src={require("../images/icon_logo.png")}
           alt="아이콘 로고 이미지"
         />
         <span>svelte hacker news</span>
