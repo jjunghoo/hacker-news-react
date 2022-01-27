@@ -1,9 +1,16 @@
+import { useEffect, useState } from "react";
+import { Main } from "./components/Main";
+import { Spinner } from "./components/Spinner";
 import "./styles.css";
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello world!</h1>
-    </div>
-  );
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  return <>{loading ? <Spinner /> : <Main />}</>;
 }
