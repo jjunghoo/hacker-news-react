@@ -8,5 +8,5 @@ const Img = styled.img`
 `;
 
 export const Spinner = () => {
-  return <Img src={require("../images/svelteLogo.png")} alt="로고 이미지" />;
+  return <Img src={require("../images/lodingImg.png")} alt="로고 이미지" />;
 };
