@@ -9,11 +9,9 @@ const SearchWrap = styled.div`
 `;
 
 const LogoAndTitle = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   span {
-    /* border: 1px solid red; */
     width: min-content;
     font-size: 12px;
     line-height: 10px;
@@ -21,7 +19,6 @@ const LogoAndTitle = styled.div`
 `;
 
 const SearchImg = styled.div`
-  /* border: 1px solid blue; */
   width: 24px;
   height: 24px;
   position: relative;

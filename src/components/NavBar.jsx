@@ -11,7 +11,6 @@ const Nav = styled.nav`
 `;
 
 const IconWrap = styled.div`
-  /* border: 1px solid blue; */
   :first-of-type {
     padding: 3px 15px 12px;
     p {
@@ -55,7 +54,6 @@ const IconWrap = styled.div`
 `;
 
 const Icon = styled.div`
-  /* border: 1px solid black; */
   position: relative;
   font-size: 8.5px;
 `;
