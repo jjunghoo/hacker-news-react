@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
+import { Route, Routes } from "react-router-dom";
+import { Ask } from "./Ask";
+import { Home } from "./Home";
+import { Jobs } from "./Jobs";
 import { NavBar } from "./NavBar";
+import { New } from "./New";
 import { SearchBar } from "./SearchBar";
+import { Show } from "./Show";
+import { Top } from "./Top";
 
 const Container = styled.div`
   width: 375px;
@@ -14,7 +21,14 @@ export const Main = () => {
   return (
     <Container>
       <SearchBar />
-      <main>"main"</main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Top" element={<Top />} />
+        <Route path="/New" element={<New />} />
+        <Route path="/Ask" element={<Ask />} />
+        <Route path="/Show" element={<Show />} />
+        <Route path="/Jobs" element={<Jobs />} />
+      </Routes>
       <NavBar />
     </Container>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import { Main } from "./components/Main";
 import { Spinner } from "./components/Spinner";
 import "./styles.css";
@@ -12,5 +13,9 @@ export default function App() {
     }, 3000);
   }, []);
 
-  return <>{loading ? <Spinner /> : <Main />}</>;
+  return (
+    <>
+      <BrowserRouter>{loading ? <Spinner /> : <Main />}</BrowserRouter>
+    </>
+  );
 }

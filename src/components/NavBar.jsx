@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
@@ -56,46 +57,66 @@ const IconWrap = styled.div`
 const Icon = styled.div`
   position: relative;
   font-size: 8.5px;
+  color: black;
 `;
 
 export const NavBar = () => {
   return (
     <Nav>
       <IconWrap>
-        <Icon>
-          <img src={require("../images/topIcon.png")} alt="Top 아이콘 이미지" />
-          <p>Top</p>
-        </Icon>
+        <Link to="/Top">
+          <Icon>
+            <img
+              src={require("../images/topIcon.png")}
+              alt="Top 아이콘 이미지"
+            />
+            <p>Top</p>
+          </Icon>
+        </Link>
       </IconWrap>
       <IconWrap>
-        <Icon>
-          <img src={require("../images/newIcon.png")} alt="Top 아이콘 이미지" />
-          <p>New</p>
-        </Icon>
+        <Link to="/New">
+          <Icon>
+            <img
+              src={require("../images/newIcon.png")}
+              alt="Top 아이콘 이미지"
+            />
+            <p>New</p>
+          </Icon>
+        </Link>
       </IconWrap>
       <IconWrap>
-        <Icon>
-          <img src={require("../images/askIcon.png")} alt="Top 아이콘 이미지" />
-          <p>Ask</p>
-        </Icon>
+        <Link to="/Ask">
+          <Icon>
+            <img
+              src={require("../images/askIcon.png")}
+              alt="Top 아이콘 이미지"
+            />
+            <p>Ask</p>
+          </Icon>
+        </Link>
       </IconWrap>
       <IconWrap>
-        <Icon>
-          <img
-            src={require("../images/showIcon.png")}
-            alt="Top 아이콘 이미지"
-          />
-          <p>Show</p>
-        </Icon>
+        <Link to="/Show">
+          <Icon>
+            <img
+              src={require("../images/showIcon.png")}
+              alt="Top 아이콘 이미지"
+            />
+            <p>Show</p>
+          </Icon>
+        </Link>
       </IconWrap>
       <IconWrap>
-        <Icon>
-          <img
-            src={require("../images/jobsIcon.png")}
-            alt="Top 아이콘 이미지"
-          />
-          <p>Jobs</p>
-        </Icon>
+        <Link to="/Jobs">
+          <Icon>
+            <img
+              src={require("../images/jobsIcon.png")}
+              alt="Top 아이콘 이미지"
+            />
+            <p>Jobs</p>
+          </Icon>
+        </Link>
       </IconWrap>
     </Nav>
   );

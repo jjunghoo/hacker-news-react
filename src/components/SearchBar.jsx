@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const SearchWrap = styled.div`
   border-bottom: 1px solid #ff6600;
@@ -39,10 +40,12 @@ export const SearchBar = () => {
   return (
     <SearchWrap>
       <LogoAndTitle>
-        <img
-          src={require("../images/icon_logo.png")}
-          alt="아이콘 로고 이미지"
-        />
+        <Link to="/">
+          <img
+            src={require("../images/icon_logo.png")}
+            alt="아이콘 로고 이미지"
+          />
+        </Link>
         <span>svelte hacker news</span>
       </LogoAndTitle>
       <SearchImg>
