@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getStory } from "../service/hackerNewsAPI";
 
 const Li = styled.li`
