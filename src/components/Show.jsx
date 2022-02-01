@@ -7,7 +7,7 @@ export const Show = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStories("top").then((ids) => setStoryIds(ids));
+    getStories("show").then((ids) => setStoryIds(ids));
   }, []);
   // console.log(storyIds);
   return (

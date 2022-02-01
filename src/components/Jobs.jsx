@@ -7,7 +7,7 @@ export const Jobs = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStories("top").then((ids) => setStoryIds(ids));
+    getStories("job").then((ids) => setStoryIds(ids));
   }, []);
   // console.log(storyIds);
   return (
