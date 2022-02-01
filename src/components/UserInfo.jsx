@@ -9,7 +9,7 @@ export const UserInfo = () => {
 
   useEffect(() => {
     getUserInfo(params.name).then((data) => setUserInfo(data));
-  }, []);
+  }, [params.name]);
 
   console.log(userInfo);
 
