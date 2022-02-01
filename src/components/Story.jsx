@@ -1,25 +1,25 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { mapTime } from "../mappers/mapTimes";
 import { getStory } from "../service/hackerNewsAPI";
 
 const Li = styled.li`
-  border: 1px solid black;
+  border-top: 1px solid #e8e8ed;
   padding: 20px;
-  & div {
-    :first-of-type {
-      border: 1px solid rgba(144, 144, 144, 1);
-      border-radius: 12.5px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 6px 10px;
-      width: min-content;
-      font-size: 10px;
-      b {
-        color: #909090;
-        font-weight: bold;
-      }
+  & .source {
+    border: 1px solid rgba(144, 144, 144, 1);
+    border-radius: 12.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    width: min-content;
+    font-size: 10px;
+    b {
+      color: #909090;
+      font-weight: bold;
     }
   }
   p {
@@ -48,22 +48,32 @@ export const Story = ({ storyId }) => {
     };
   }, []);
   console.log(story);
-  const { title, score, by, kids, url } = story;
+  const { title, score, by, time, descendants, kids, url } = story;
 
   return (
     <Li>
-      <div>
-        <b>{url && url.split("/")[2].toUpperCase()}</b>
-      </div>
+      {url && (
+        <div className="source">
+          <b>{url.split("/")[2].toUpperCase()}</b>
+        </div>
+      )}
       <a href={url} rel="noopener noreferrer" target="_blank">
         <p>{title}</p>
       </a>
       <div>
         <span>
-          {score} points <b>by {by}</b>
+          {score} points{" "}
+          <Link
+            to={`/user/${by}`}
+            style={{ textDecoration: "none", color: "#6b6b6b" }}
+          >
+            <b>by {by}</b>
+          </Link>
         </span>
         <br />
-        <span>1 d ago {kids && kids.length} comments</span>
+        <span>
+          {mapTime(time)} ago {descendants} comments
+        </span>
       </div>
     </Li>
   );

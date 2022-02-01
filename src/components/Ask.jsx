@@ -1,3 +1,9 @@
+import { Banner } from "./Banner";
+
 export const Ask = () => {
-  return "Ask";
+  return (
+    <>
+      <Banner>ASK</Banner>
+    </>
+  );
 };

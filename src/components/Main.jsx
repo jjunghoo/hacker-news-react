@@ -8,6 +8,7 @@ import { New } from "./New";
 import { SearchBar } from "./SearchBar";
 import { Show } from "./Show";
 import { Top } from "./Top";
+import { UserInfo } from "./UserInfo";
 
 const Container = styled.div`
   width: 375px;
@@ -28,6 +29,7 @@ export const Main = () => {
         <Route path="/Ask" element={<Ask />} />
         <Route path="/Show" element={<Show />} />
         <Route path="/Jobs" element={<Jobs />} />
+        <Route path="/user/:name" element={<UserInfo />} />
       </Routes>
       <NavBar />
     </Container>
