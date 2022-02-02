@@ -1,9 +1,18 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { MainBanner } from "./MainBanner";
+import { MainContents } from "./MainContents";
+
+const Div = styled.div`
+  padding: 10px 20px 0px;
+  height: 668px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 export const Home = () => {
-  const [bannerAttribute, setBannerAttribute] = useState([
+  const [bannerAttribute] = useState([
     {
       category: "top",
       text: "Find out most hot issues",
@@ -35,10 +44,10 @@ export const Home = () => {
 
   console.log(bannerAttribute);
   return (
-    <div style={{ padding: "10px 20px 0px" }}>
+    <Div>
       {bannerAttribute.map((Attribute) => (
-        <MainBanner key={Attribute.category} attribute={Attribute} />
+        <MainContents key={Attribute.category} attribute={Attribute} />
       ))}
-    </div>
+    </Div>
   );
 };

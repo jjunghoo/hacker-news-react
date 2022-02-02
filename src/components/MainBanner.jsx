@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const MainBannerDiv = styled.div`
   margin-bottom: 10px;
@@ -42,9 +43,11 @@ export const MainBanner = ({ attribute }) => {
         <span>{category.toUpperCase()} 5</span>
         <p>{text}</p>
       </div>
-      <div className="more">
-        <p style={{ color: background }}>More</p>
-      </div>
+      <Link to={`/${category}`} style={{ textDecoration: "none" }}>
+        <div className="more">
+          <p style={{ color: background }}>More</p>
+        </div>
+      </Link>
     </MainBannerDiv>
   );
 };

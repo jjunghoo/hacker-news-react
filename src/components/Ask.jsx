@@ -1,7 +1,16 @@
+import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { getStories } from "../service/hackerNewsAPI";
 import { Banner } from "./Banner";
 import { Story } from "./Story";
+
+const Ul = styled.ul`
+  height: 610px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 export const Ask = () => {
   const [storyIds, setStoryIds] = useState([]);
@@ -13,11 +22,11 @@ export const Ask = () => {
   return (
     <>
       <Banner>ASK</Banner>
-      <ul>
-        {storyIds.slice(0, 4).map((storyId, i) => (
+      <Ul>
+        {storyIds.slice(0, 29).map((storyId, i) => (
           <Story key={i} storyId={storyId} />
         ))}
-      </ul>
+      </Ul>
     </>
   );
 };

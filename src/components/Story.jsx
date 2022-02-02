@@ -47,7 +47,7 @@ export const Story = ({ storyId }) => {
       setStory([]);
     };
   }, [storyId]);
-  console.log(story);
+  // console.log(story);
   const { title, score, by, time, descendants, kids, url } = story;
 
   return (
