@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Ask } from "./Ask";
 import { Home } from "./Home";
@@ -7,6 +8,7 @@ import { NavBar } from "./NavBar";
 import { New } from "./New";
 import { SearchBar } from "./SearchBar";
 import { Show } from "./Show";
+import { Spinner } from "./Spinner";
 import { Top } from "./Top";
 import { UserInfo } from "./UserInfo";
 
@@ -19,19 +21,34 @@ const Container = styled.div`
 `;
 
 export const Main = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
   return (
-    <Container>
-      <SearchBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Top" element={<Top />} />
-        <Route path="/New" element={<New />} />
-        <Route path="/Ask" element={<Ask />} />
-        <Route path="/Show" element={<Show />} />
-        <Route path="/Jobs" element={<Jobs />} />
-        <Route path="/user/:name" element={<UserInfo />} />
-      </Routes>
-      <NavBar />
-    </Container>
+    <>
+      {loading ? (
+        <Container>
+          <Spinner />
+        </Container>
+      ) : (
+        <Container>
+          <SearchBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Top" element={<Top />} />
+            <Route path="/New" element={<New />} />
+            <Route path="/Ask" element={<Ask />} />
+            <Route path="/Show" element={<Show />} />
+            <Route path="/Jobs" element={<Jobs />} />
+            <Route path="/user/:name" element={<UserInfo />} />
+          </Routes>
+          <NavBar />{" "}
+        </Container>
+      )}
+    </>
   );
 };

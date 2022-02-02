@@ -1,4 +1,11 @@
 import styled from "@emotion/styled";
+import lodingImg from "../images/loadingImg.png";
+
+const Div = styled.div`
+  /* border: 1px solid black; */
+  width: 375px;
+  height: 812px;
+`;
 
 const Img = styled.img`
   position: absolute;
@@ -8,5 +15,9 @@ const Img = styled.img`
 `;
 
 export const Spinner = () => {
-  return <Img src={require("../images/lodingImg.png")} alt="로고 이미지" />;
+  return (
+    <Div>
+      <Img src={lodingImg} alt="로고 이미지" />
+    </Div>
+  );
 };

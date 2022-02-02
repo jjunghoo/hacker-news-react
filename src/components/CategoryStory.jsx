@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { getStory } from "../service/hackerNewsAPI";
+import point from "../images/point.png";
+import comment from "../images/comment.png";
 
 const CategoryStoryDiv = styled.div`
   padding: 20px;
@@ -29,7 +31,7 @@ const CategoryStoryDiv = styled.div`
   div {
     /* border: 1px solid black; */
     margin-top: 15.33px;
-    width: 63px;
+    width: 67px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -72,9 +74,9 @@ export const CategoryStory = ({ categoryData }) => {
         </p>
       )}
       <div>
-        <img src={require("../images/point.png")} alt="point 이미지" />
+        <img src={point} alt="point 이미지" />
         <span>{categoryStory.score}</span>
-        <img src={require("../images/comment.png")} alt="comment 이미지" />
+        <img src={comment} alt="comment 이미지" />
         <span>{categoryStory.descendants}</span>
       </div>
     </CategoryStoryDiv>

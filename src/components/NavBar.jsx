@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import newIcon from "../images/newIcon.png";
+import topIcon from "../images/topIcon.png";
+import askIcon from "../images/askIcon.png";
+import showIcon from "../images/showIcon.png";
+import jobsIcon from "../images/jobsIcon.png";
 
 const Nav = styled.nav`
   width: 100%;
@@ -66,10 +71,7 @@ export const NavBar = () => {
       <IconWrap>
         <Link to="/Top">
           <Icon>
-            <img
-              src={require("../images/topIcon.png")}
-              alt="Top 아이콘 이미지"
-            />
+            <img src={topIcon} alt="Top 아이콘 이미지" />
             <p>Top</p>
           </Icon>
         </Link>
@@ -77,10 +79,7 @@ export const NavBar = () => {
       <IconWrap>
         <Link to="/New">
           <Icon>
-            <img
-              src={require("../images/newIcon.png")}
-              alt="Top 아이콘 이미지"
-            />
+            <img src={newIcon} alt="Top 아이콘 이미지" />
             <p>New</p>
           </Icon>
         </Link>
@@ -88,10 +87,7 @@ export const NavBar = () => {
       <IconWrap>
         <Link to="/Ask">
           <Icon>
-            <img
-              src={require("../images/askIcon.png")}
-              alt="Top 아이콘 이미지"
-            />
+            <img src={askIcon} alt="Top 아이콘 이미지" />
             <p>Ask</p>
           </Icon>
         </Link>
@@ -99,10 +95,7 @@ export const NavBar = () => {
       <IconWrap>
         <Link to="/Show">
           <Icon>
-            <img
-              src={require("../images/showIcon.png")}
-              alt="Top 아이콘 이미지"
-            />
+            <img src={showIcon} alt="Top 아이콘 이미지" />
             <p>Show</p>
           </Icon>
         </Link>
@@ -110,10 +103,7 @@ export const NavBar = () => {
       <IconWrap>
         <Link to="/Jobs">
           <Icon>
-            <img
-              src={require("../images/jobsIcon.png")}
-              alt="Top 아이콘 이미지"
-            />
+            <img src={jobsIcon} alt="Top 아이콘 이미지" />
             <p>Jobs</p>
           </Icon>
         </Link>
