@@ -34,3 +34,14 @@ export const getUserInfo = async (userName) => {
     console.log(error);
   }
 };
+
+export const getComments = async (commentId) => {
+  try {
+    const response = await fetch(
+      `${itemUrl + commentId}.json?print=pretty`
+    ).then((data) => data.json());
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

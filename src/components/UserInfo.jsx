@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { mapTime } from "../mappers/mapTimes";
 import { getUserInfo } from "../service/hackerNewsAPI";
 
@@ -9,6 +9,13 @@ const UserDiv = styled.div`
   padding: 25px;
   color: #333;
   line-height: 1.5;
+  .goBack {
+    width: max-content;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
   span {
     font-size: 28px;
   }
@@ -29,6 +36,7 @@ const UserDiv = styled.div`
 export const UserInfo = () => {
   const [userInfo, setUserInfo] = useState([]);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getUserInfo(params.name).then((data) => setUserInfo(data));
@@ -38,6 +46,9 @@ export const UserInfo = () => {
 
   return (
     <UserDiv>
+      <div className="goBack" onClick={() => navigate(-1)}>
+        back
+      </div>
       <span>{userInfo.id}</span>
       <p>
         ...joined <strong>{mapTime(userInfo.created)} ago</strong>, has{" "}
@@ -45,7 +56,8 @@ export const UserInfo = () => {
       </p>
       <Link to="/">submissions </Link>
       <br />
-      {userInfo.about}
+      <br />
+      <div>{userInfo.about}</div>
     </UserDiv>
   );
 };

@@ -16,9 +16,11 @@ export const Top = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStories("top").then((ids) => setStoryIds(ids));
+    getStories("top").then((ids) =>
+      setStoryIds(ids.map((data) => (data = { id: data, menuType: "top" })))
+    );
   }, []);
-  // console.log(storyIds);
+  console.log(storyIds);
   return (
     <>
       <Banner>TOP</Banner>

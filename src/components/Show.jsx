@@ -16,7 +16,9 @@ export const Show = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStories("show").then((ids) => setStoryIds(ids));
+    getStories("show").then((ids) =>
+      setStoryIds(ids.map((data) => (data = { id: data, menuType: "show" })))
+    );
   }, []);
   // console.log(storyIds);
   return (

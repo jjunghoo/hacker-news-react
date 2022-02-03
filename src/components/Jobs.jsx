@@ -16,7 +16,9 @@ export const Jobs = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStories("job").then((ids) => setStoryIds(ids));
+    getStories("job").then((ids) =>
+      setStoryIds(ids.map((data) => (data = { id: data, menuType: "job" })))
+    );
   }, []);
   // console.log(storyIds);
   return (

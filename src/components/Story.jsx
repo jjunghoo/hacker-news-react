@@ -15,7 +15,7 @@ const Li = styled.li`
     justify-content: center;
     align-items: center;
     padding: 6px 10px;
-    width: min-content;
+    width: max-content;
     font-size: 10px;
     b {
       color: #909090;
@@ -39,16 +39,18 @@ const Li = styled.li`
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState([]);
+  let menuType = storyId.menuType;
+  if (menuType === "job") menuType = "jobs";
 
   useEffect(() => {
-    getStory(storyId).then((data) => setStory(data));
+    getStory(storyId.id).then((data) => setStory(data));
 
     return () => {
       setStory([]);
     };
   }, [storyId]);
   // console.log(story);
-  const { title, score, by, time, descendants, kids, url } = story;
+  const { title, score, by, time, descendants, kids, url, id } = story;
 
   return (
     <Li>
@@ -72,7 +74,10 @@ export const Story = ({ storyId }) => {
         </span>
         <br />
         <span>
-          {mapTime(time)} ago {descendants} comments
+          {mapTime(time)} ago {descendants}
+          <Link to={`/${menuType}/${id}/comment`} state={kids}>
+            comments
+          </Link>
         </span>
       </div>
     </Li>
