@@ -59,9 +59,19 @@ export const Story = ({ storyId }) => {
           <b>{url.split("/")[2].toUpperCase()}</b>
         </div>
       )}
-      <a href={url} rel="noopener noreferrer" target="_blank">
-        <p>{title}</p>
-      </a>
+      {url ? (
+        <a href={url} rel="noopener noreferrer" target="_blank">
+          <p>{title}</p>
+        </a>
+      ) : (
+        <Link
+          to={`/${menuType}/${id}`}
+          state={kids}
+          style={{ textDecoration: "none", color: "#6b6b6b" }}
+        >
+          <p>{title}</p>
+        </Link>
+      )}
       <div>
         <span>
           {score} points{" "}
@@ -74,8 +84,12 @@ export const Story = ({ storyId }) => {
         </span>
         <br />
         <span>
-          {mapTime(time)} ago {descendants}
-          <Link to={`/${menuType}/${id}/comment`} state={kids}>
+          {mapTime(time)} ago {descendants}&nbsp;
+          <Link
+            to={`/${menuType}/${id}/comment`}
+            state={kids}
+            style={{ textDecoration: "none", color: "#6b6b6b" }}
+          >
             comments
           </Link>
         </span>

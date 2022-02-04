@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Ask } from "./Ask";
-import { Comments } from "./Comments";
 import { Home } from "./Home";
 import { Jobs } from "./Jobs";
 import { NavBar } from "./NavBar";
 import { New } from "./New";
+import { PostContent } from "./PostContent";
 import { SearchBar } from "./SearchBar";
 import { Show } from "./Show";
 import { Spinner } from "./Spinner";
@@ -23,9 +23,6 @@ const Container = styled.div`
 
 export const Main = () => {
   const [loading, setLoading] = useState(true);
-
-  const location = useLocation().state;
-  console.log(location);
 
   useEffect(() => {
     setTimeout(() => {
@@ -52,8 +49,9 @@ export const Main = () => {
             <Route path="/user/:name" element={<UserInfo />} />
             <Route
               path="/:menutype/:storyId/comment"
-              element={<Comments commentId={location} />}
+              element={<PostContent />}
             />
+            <Route path="/:menutype/:storyId" element={<PostContent />} />
           </Routes>
           <NavBar />{" "}
         </Container>
