@@ -42,7 +42,7 @@ export const UserInfo = () => {
     getUserInfo(params.name).then((data) => setUserInfo(data));
   }, [params.name]);
 
-  console.log(userInfo);
+  // console.log(userInfo);
 
   return (
     <UserDiv>

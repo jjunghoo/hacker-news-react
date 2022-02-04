@@ -60,7 +60,7 @@ export const PostContent = () => {
   const { title, text, by, descendants, time, url } = story;
 
   const commentId = useLocation().state;
-  console.log(commentId);
+  // console.log(commentId);
 
   useEffect(() => {
     getStory(params.storyId).then((data) => setStory(data));

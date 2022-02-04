@@ -4,7 +4,7 @@ import { getStories } from "../service/hackerNewsAPI";
 import { Banner } from "./Banner";
 import { Story } from "./Story";
 
-const Ul = styled.ul`
+const WrapDiv = styled.ul`
   height: 610px;
   overflow: scroll;
   ::-webkit-scrollbar {
@@ -22,13 +22,13 @@ export const New = () => {
   }, []);
   // console.log(storyIds);
   return (
-    <>
+    <WrapDiv>
       <Banner>NEW</Banner>
-      <Ul>
+      <ul>
         {storyIds.slice(0, 29).map((storyId, i) => (
           <Story key={i} storyId={storyId} />
         ))}
-      </Ul>
-    </>
+      </ul>
+    </WrapDiv>
   );
 };

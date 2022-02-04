@@ -48,8 +48,8 @@ export const Comment = ({ commentId, storyId }) => {
   }, [commentId]);
 
   const { parent, kids } = comment;
-  console.log(comment);
-  console.log(typeof storyId, typeof parent);
+  // console.log(comment);
+  // console.log(typeof storyId, typeof parent);
   return (
     <CommentWrap>
       <UserProfile>

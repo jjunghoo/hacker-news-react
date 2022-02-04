@@ -42,7 +42,7 @@ export const Home = () => {
 
   useEffect(() => {});
 
-  console.log(bannerAttribute);
+  // console.log(bannerAttribute);
   return (
     <Div>
       {bannerAttribute.map((Attribute) => (
