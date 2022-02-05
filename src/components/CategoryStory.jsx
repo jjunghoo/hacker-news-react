@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { getStory } from "../service/hackerNewsAPI";
+import { Link } from "react-router-dom";
 import point from "../images/point.png";
 import comment from "../images/comment.png";
 
@@ -55,9 +56,15 @@ export const CategoryStory = ({ categoryData }) => {
   // console.log(categoryStory)
   return (
     <CategoryStoryDiv>
-      <a href={categoryStory.url} rel="noopener noreferrer" target="_blank">
-        <span>{categoryStory.title}</span>
-      </a>
+      {categoryStory.url ? (
+        <a href={categoryStory.url} rel="noopener noreferrer" target="_blank">
+          <span>{categoryStory.title}</span>
+        </a>
+      ) : (
+        <Link to={`/ask/${categoryStory.id}`} state={categoryStory.kids}>
+          <span>{categoryStory.title}</span>
+        </Link>
+      )}
       {categoryStory.text ? (
         <p>{categoryStory.text}</p>
       ) : (
