@@ -27,7 +27,11 @@ export const MainContents = ({ attribute }) => {
       <MainBanner attribute={attribute} />
       <ul>
         {menuByStory.map((categoryData) => (
-          <CategoryStory key={categoryData} categoryData={categoryData} />
+          <CategoryStory
+            key={categoryData}
+            categoryData={categoryData}
+            category={category}
+          />
         ))}
       </ul>
     </WrapDiv>

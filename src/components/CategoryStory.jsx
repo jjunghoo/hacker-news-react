@@ -36,6 +36,9 @@ const CategoryStoryDiv = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    a {
+      display: flex;
+    }
     span {
       color: rgba(253, 97, 6, 1);
       font-weight: 400;
@@ -46,14 +49,14 @@ const CategoryStoryDiv = styled.div`
   }
 `;
 
-export const CategoryStory = ({ categoryData }) => {
+export const CategoryStory = ({ categoryData, category }) => {
   const [categoryStory, setCategoryStory] = useState([]);
 
   useEffect(() => {
     getStory(categoryData).then((data) => setCategoryStory(data));
   }, [categoryData]);
 
-  // console.log(categoryStory)
+  // console.log(categoryData)
   return (
     <CategoryStoryDiv>
       {categoryStory.url ? (
@@ -84,7 +87,12 @@ export const CategoryStory = ({ categoryData }) => {
         <img src={point} alt="point 이미지" />
         <span>{categoryStory.score}</span>
         <img src={comment} alt="comment 이미지" />
-        <span>{categoryStory.descendants}</span>
+        <Link
+          to={`/${category}/${categoryStory.id}/comment`}
+          state={categoryStory.kids}
+        >
+          <span>{categoryStory.descendants}</span>
+        </Link>
       </div>
     </CategoryStoryDiv>
   );
