@@ -36,7 +36,8 @@ const MainBannerDiv = styled.div`
 `;
 
 export const MainBanner = ({ attribute }) => {
-  const { category, text, background } = attribute;
+  let { category, text, background } = attribute;
+  if (category === "job") category = "jobs";
   return (
     <MainBannerDiv style={{ backgroundColor: background }}>
       <div className="bannerText">

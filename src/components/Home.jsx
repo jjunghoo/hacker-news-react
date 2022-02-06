@@ -34,7 +34,7 @@ export const Home = () => {
       background: "rgba(105, 160, 117, 1)"
     },
     {
-      category: "jobs",
+      category: "job",
       text: "Your new possibility",
       background: "rgba(254, 187, 16, 1)"
     }
