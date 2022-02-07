@@ -28,6 +28,7 @@ const CategoryStoryDiv = styled.div`
     line-height: 14.06px;
     padding: 13px 0 0;
     color: rgba(0, 0, 0, 1);
+    height: 69.2px;
   }
   div {
     /* border: 1px solid black; */
@@ -69,7 +70,7 @@ export const CategoryStory = ({ categoryData, category }) => {
         </Link>
       )}
       {categoryStory.text ? (
-        <p>{categoryStory.text}</p>
+        <p dangerouslySetInnerHTML={{ __html: categoryStory.text }}></p>
       ) : (
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
