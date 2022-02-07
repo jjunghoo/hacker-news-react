@@ -57,7 +57,7 @@ export const UserInfo = () => {
       <Link to="/">submissions </Link>
       <br />
       <br />
-      <div>{userInfo.about}</div>
+      <div dangerouslySetInnerHTML={{ __html: userInfo.about }}></div>
     </UserDiv>
   );
 };
