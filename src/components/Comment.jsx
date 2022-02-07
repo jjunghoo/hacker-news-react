@@ -62,7 +62,7 @@ export const Comment = ({ commentId, storyId }) => {
           <p>{comment.by}</p>
         </NavLink>
       </UserProfile>
-      <UserText>{comment.text}</UserText>
+      <UserText dangerouslySetInnerHTML={{ __html: comment.text }}></UserText>
       <CommentDate>{mapTime(comment.time)} ago</CommentDate>
       <div>{kids && <Comments commentId={kids} storyId={storyId} />}</div>
     </CommentWrap>
