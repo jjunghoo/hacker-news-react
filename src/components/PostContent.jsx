@@ -27,7 +27,7 @@ const StoryContent = styled.div`
     font-size: 24px;
     line-height: 26.4px;
   }
-  p {
+  div {
     display: inline-block;
     margin-top: 10px;
     color: rgba(107, 107, 107, 1);
@@ -41,7 +41,7 @@ const StoryContent = styled.div`
   }
 `;
 
-const StoryText = styled.div`
+const StoryText = styled.p`
   color: rgba(0, 0, 0, 1);
   font-weight: 400;
   font-size: 14px;
@@ -74,16 +74,16 @@ export const PostContent = () => {
           <span>{title}</span>
         </a>
         <br />
-        <p>
+        <div>
           {mapTime(time)} ago{" "}
           <NavLink to={`/user/${by}`}>
             <b>by {by}</b>
           </NavLink>
-        </p>
+        </div>
         <br />
-        <StoryText>{text}</StoryText>
+        <StoryText dangerouslySetInnerHTML={{ __html: text }}></StoryText>
         <br />
-        <p>{descendants} comment</p>
+        <div>{descendants} comment</div>
       </StoryContent>
       <BaseLineDiv />
       <Comments commentId={commentId} storyId={Number(params.storyId)} />
