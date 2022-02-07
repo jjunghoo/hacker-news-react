@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import newIcon from "../images/newIcon.png";
 import topIcon from "../images/topIcon.png";
 import askIcon from "../images/askIcon.png";
@@ -17,6 +17,12 @@ const Nav = styled.nav`
 `;
 
 const IconWrap = styled.div`
+  .active {
+    div {
+      filter: invert(44%) sepia(22%) saturate(5164%) hue-rotate(357deg)
+        brightness(98%) contrast(102%);
+    }
+  }
   :first-of-type {
     padding: 3px 15px 12px;
     p {
@@ -64,49 +70,49 @@ const Icon = styled.div`
   font-size: 8.5px;
   color: black;
 `;
-
+// activeStyle={activeStyle}
 export const NavBar = () => {
   return (
     <Nav>
       <IconWrap>
-        <Link to="/Top">
+        <NavLink to="/Top">
           <Icon>
             <img src={topIcon} alt="Top 아이콘 이미지" />
             <p>Top</p>
           </Icon>
-        </Link>
+        </NavLink>
       </IconWrap>
       <IconWrap>
-        <Link to="/New">
+        <NavLink to="/New">
           <Icon>
             <img src={newIcon} alt="Top 아이콘 이미지" />
             <p>New</p>
           </Icon>
-        </Link>
+        </NavLink>
       </IconWrap>
       <IconWrap>
-        <Link to="/Ask">
+        <NavLink to="/Ask">
           <Icon>
             <img src={askIcon} alt="Top 아이콘 이미지" />
             <p>Ask</p>
           </Icon>
-        </Link>
+        </NavLink>
       </IconWrap>
       <IconWrap>
-        <Link to="/Show">
+        <NavLink to="/Show">
           <Icon>
             <img src={showIcon} alt="Top 아이콘 이미지" />
             <p>Show</p>
           </Icon>
-        </Link>
+        </NavLink>
       </IconWrap>
       <IconWrap>
-        <Link to="/Jobs">
+        <NavLink to="/Jobs">
           <Icon>
             <img src={jobsIcon} alt="Top 아이콘 이미지" />
             <p>Jobs</p>
           </Icon>
-        </Link>
+        </NavLink>
       </IconWrap>
     </Nav>
   );

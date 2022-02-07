@@ -29,6 +29,12 @@ const CategoryStoryDiv = styled.div`
     padding: 13px 0 0;
     color: rgba(0, 0, 0, 1);
     height: 69.2px;
+    a {
+      color: rgba(0, 0, 0, 1);
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 14.06px;
+    }
   }
   div {
     /* border: 1px solid black; */
