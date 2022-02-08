@@ -7,6 +7,8 @@ import { getStory } from "../service/hackerNewsAPI";
 const Li = styled.li`
   border-top: 1px solid #e8e8ed;
   padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   & .source {
     border: 1px solid rgba(144, 144, 144, 1);
     border-radius: 12.5px;
@@ -17,6 +19,7 @@ const Li = styled.li`
     padding: 6px 10px;
     width: max-content;
     font-size: 10px;
+    font-weight: 700;
     b {
       color: #909090;
       font-weight: bold;
@@ -27,6 +30,7 @@ const Li = styled.li`
     margin: 10px 0;
     font-weight: 800;
     color: #000000;
+    line-height: 17.6px;
   }
   span {
     font-size: 10px;

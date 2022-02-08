@@ -51,7 +51,7 @@ const CategoryStoryDiv = styled.div`
       font-weight: 400;
       font-size: 10px;
       line-height: 10px;
-      /* letter-spacing: -0.5px; */
+      letter-spacing: -0.5px;
     }
   }
 `;

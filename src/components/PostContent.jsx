@@ -13,6 +13,8 @@ const WrapDiv = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
 const StoryContent = styled.div`

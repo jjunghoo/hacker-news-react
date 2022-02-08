@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 const CommentWrap = styled.div`
   /* border: 1px solid; */
-  padding: 20px 20px 40px;
+  padding: 20px 10px 10px 20px;
 `;
 
 const UserProfile = styled.div`

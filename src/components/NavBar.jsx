@@ -23,6 +23,11 @@ const IconWrap = styled.div`
         brightness(98%) contrast(102%);
     }
   }
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+  }
   :first-of-type {
     padding: 3px 15px 12px;
     p {

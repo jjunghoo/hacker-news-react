@@ -20,6 +20,9 @@ const LogoAndTitle = styled.div`
     font-size: 12px;
     line-height: 10px;
     margin-left: 10px;
+    font-family: "Roboto";
+    font-weight: 400;
+    color: rgba(95, 95, 95, 1);
   }
 `;
 

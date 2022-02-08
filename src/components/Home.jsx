@@ -9,6 +9,7 @@ const Div = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+  font-family: "Roboto";
 `;
 
 export const Home = () => {
