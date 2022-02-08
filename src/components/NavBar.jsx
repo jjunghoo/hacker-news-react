@@ -14,6 +14,7 @@ const Nav = styled.nav`
   padding: 0 8px 32px;
   position: absolute;
   bottom: 1px;
+  background: rgba(255, 255, 255, 1);
 `;
 
 const IconWrap = styled.div`

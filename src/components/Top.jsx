@@ -6,7 +6,7 @@ import { Story } from "./Story";
 
 const WrapDiv = styled.ul`
   /* height: 610px; */
-  height: 83vh;
+  height: 85.5vh;
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;

@@ -8,7 +8,8 @@ import { Comments } from "./Comments";
 
 const WrapDiv = styled.div`
   /* border: 1px solid red; */
-  height: 672px;
+  /* height: 672px; */
+  height: 79.5vh;
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
