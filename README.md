@@ -6,4 +6,4 @@ Created with CodeSandbox
 https://codesandbox.io/s/github/jjunghoo/hacker-news-react
 
 ## Demo
-https://csb-n198z-c3g0dgg0u-jjunghoo.vercel.app
+https://csb-7lwjz-2pio7q6ph-jjunghoo.vercel.app/
