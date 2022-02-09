@@ -6,9 +6,8 @@ const Nav = styled.nav`
   width: 100%;
   justify-content: space-around;
   border-top: 1px solid #e8e8ed;
-  padding: 0 0px 32px;
   position: absolute;
-  bottom: 1px;
+  bottom: 0px;
   background: rgba(255, 255, 255, 1);
 `;
 
@@ -25,7 +24,7 @@ const IconWrap = styled.div`
     font-weight: 400;
   }
   :first-of-type {
-    padding: 3px 14px 12px;
+    padding: 3px 14px 44px;
     p {
       position: absolute;
       bottom: -1.5px;
