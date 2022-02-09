@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
-import homeIcon from "../images/homeIcon.png";
-import searchImg1 from "../images/searchImg1.png";
-import searchImg2 from "../images/searchImg2.png";
 
 const SearchWrap = styled.div`
   border-bottom: 1px solid #ff6600;
@@ -56,7 +53,7 @@ export const SearchBar = () => {
       <LogoAndTitle>
         <Link to="/">
           <img
-            src={homeIcon}
+            src="https://rawcdn.githack.com/jjunghoo/hacker-news-react/7733082f606483f0751f021fadd3a0350db6c7fb/src/images/homeIcon.png"
             alt="아이콘 로고 이미지"
             style={{ width: isMobileAndTablet ? "20px" : "3vh" }}
           />
@@ -72,8 +69,14 @@ export const SearchBar = () => {
         </span>
       </LogoAndTitle>
       <SearchImg>
-        <img src={searchImg1} alt="검색 이미지" />
-        <img src={searchImg2} alt="검색 이미지" />
+        <img
+          src="https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/CxNx-searchImg1.png"
+          alt="검색 이미지"
+        />
+        <img
+          src="https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/etjL-searchImg2.png"
+          alt="검색 이미지"
+        />
       </SearchImg>
     </SearchWrap>
   );

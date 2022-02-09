@@ -15,11 +15,7 @@ import { UserInfo } from "./UserInfo";
 import { useMediaQuery } from "react-responsive";
 
 const Container = styled.div`
-  /* width: 375px; */
   height: 85.5vh;
-  /* border: 1px solid black; */
-  /* border-radius: 0 0 44px 44px; */
-  /* position: relative; */
 `;
 
 export const Main = () => {

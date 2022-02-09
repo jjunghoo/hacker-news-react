@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { getStory } from "../service/hackerNewsAPI";
 import { Link } from "react-router-dom";
-import point from "../images/point.png";
-import comment from "../images/comment.png";
 
 const CategoryStoryDiv = styled.div`
   padding: 20px;
@@ -37,7 +35,6 @@ const CategoryStoryDiv = styled.div`
     }
   }
   div {
-    /* border: 1px solid black; */
     margin-top: 15.33px;
     width: 67px;
     display: flex;
@@ -63,7 +60,6 @@ export const CategoryStory = ({ categoryData, category }) => {
     getStory(categoryData).then((data) => setCategoryStory(data));
   }, [categoryData]);
 
-  // console.log(categoryData)
   return (
     <CategoryStoryDiv>
       {categoryStory.url ? (
@@ -91,9 +87,15 @@ export const CategoryStory = ({ categoryData, category }) => {
         </p>
       )}
       <div>
-        <img src={point} alt="point 이미지" />
+        <img
+          src="https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/ewWu-point.png"
+          alt="point 이미지"
+        />
         <span>{categoryStory.score}</span>
-        <img src={comment} alt="comment 이미지" />
+        <img
+          src="https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/wgrG-comment.png"
+          alt="comment 이미지"
+        />
         <Link
           to={`/${category}/${categoryStory.id}/comment`}
           state={categoryStory.kids}

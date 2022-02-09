@@ -1,15 +1,9 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import NewIcon from "../images/newIcon.png";
-import TopIcon from "../images/topIcon.png";
-import AskIcon from "../images/askIcon.png";
-import ShowIcon from "../images/showIcon.png";
-import JobsIcon from "../images/jobsIcon.png";
 import { useMediaQuery } from "react-responsive";
 
 const Nav = styled.nav`
   width: 100%;
-  /* display: flex; */
   justify-content: space-around;
   border-top: 1px solid #e8e8ed;
   padding: 0 0px 32px;
@@ -91,11 +85,31 @@ const desctopNav = {
 };
 
 const menuName = [
-  { name: "Top", image: TopIcon },
-  { name: "New", image: NewIcon },
-  { name: "Ask", image: AskIcon },
-  { name: "Show", image: ShowIcon },
-  { name: "Jobs", image: JobsIcon }
+  {
+    name: "Top",
+    image:
+      "https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/y7Sq-topIcon.png"
+  },
+  {
+    name: "New",
+    image:
+      "https://rawcdn.githack.com/jjunghoo/hacker-news-react/7733082f606483f0751f021fadd3a0350db6c7fb/src/images/newIcon.png"
+  },
+  {
+    name: "Ask",
+    image:
+      "https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/mI-T-askIcon.png"
+  },
+  {
+    name: "Show",
+    image:
+      "https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/MPrP-showIcon.png"
+  },
+  {
+    name: "Jobs",
+    image:
+      "https://uploads.codesandbox.io/uploads/user/0a2c400d-2472-4c35-baba-0c0c77df8e4e/j1mn-jobsIcon.png"
+  }
 ];
 
 export const NavBar = () => {

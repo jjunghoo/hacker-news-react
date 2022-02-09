@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import lodingImg from "../images/loadingImg.png";
 
 const Div = styled.div`
-  /* border: 1px solid black; */
   width: 375px;
   height: 812px;
 `;
@@ -17,7 +15,10 @@ const Img = styled.img`
 export const Spinner = () => {
   return (
     <Div>
-      <Img src={lodingImg} alt="로고 이미지" />
+      <Img
+        src="https://rawcdn.githack.com/jjunghoo/hacker-news-react/7733082f606483f0751f021fadd3a0350db6c7fb/src/images/loadingImg.png"
+        alt="로고 이미지"
+      />
     </Div>
   );
 };
