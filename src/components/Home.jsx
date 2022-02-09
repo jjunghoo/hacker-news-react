@@ -4,7 +4,6 @@ import { MainContents } from "./MainContents";
 
 const Div = styled.div`
   padding: 10px 20px 0px;
-  /* height: 668px; */
   height: 100%;
   overflow: scroll;
   ::-webkit-scrollbar {
@@ -44,7 +43,6 @@ export const Home = () => {
 
   useEffect(() => {});
 
-  // console.log(bannerAttribute);
   return (
     <Div>
       {bannerAttribute.map((Attribute) => (

@@ -48,7 +48,7 @@ export const SearchBar = () => {
 
   return (
     <SearchWrap
-      style={{ padding: isMobileAndTablet ? "10px 22px" : "20px 22px" }}
+      style={{ padding: isMobileAndTablet ? "10px 22px" : "26px 22px" }}
     >
       <LogoAndTitle>
         <Link to="/">

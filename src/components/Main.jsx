@@ -38,7 +38,7 @@ export const Main = () => {
           <Spinner />
         </Container>
       ) : (
-        <Container style={{ height: isMobileAndTablet ? "85.5vh" : "91.5vh" }}>
+        <Container style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
           <SearchBar />
           <Routes>
             <Route path="/" element={<Home />} />

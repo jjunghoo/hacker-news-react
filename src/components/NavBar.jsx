@@ -80,7 +80,8 @@ const desctopNav = {
   justifyContent: "center",
   width: "fit-content",
   left: "600px",
-  borderTop: "none"
+  borderTop: "none",
+  backgroundColor: "transparent"
 };
 
 const menuName = [
