@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import homeIcon from "../images/homeIcon.png";
 import searchImg1 from "../images/searchImg1.png";
@@ -44,13 +45,31 @@ const SearchImg = styled.div`
 `;
 
 export const SearchBar = () => {
+  const isMobileAndTablet = useMediaQuery({
+    query: "(min-width:320px) and (max-width:1399px)"
+  });
+
   return (
-    <SearchWrap>
+    <SearchWrap
+      style={{ padding: isMobileAndTablet ? "10px 22px" : "20px 22px" }}
+    >
       <LogoAndTitle>
         <Link to="/">
-          <img src={homeIcon} alt="아이콘 로고 이미지" />
+          <img
+            src={homeIcon}
+            alt="아이콘 로고 이미지"
+            style={{ width: isMobileAndTablet ? "20px" : "3vh" }}
+          />
         </Link>
-        <span>svelte hacker news</span>
+        <span
+          style={
+            isMobileAndTablet
+              ? { fontSize: "12px" }
+              : { width: "fit-content", fontSize: "xx-large" }
+          }
+        >
+          svelte hacker news
+        </span>
       </LogoAndTitle>
       <SearchImg>
         <img src={searchImg1} alt="검색 이미지" />

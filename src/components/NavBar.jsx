@@ -1,17 +1,18 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import newIcon from "../images/newIcon.png";
-import topIcon from "../images/topIcon.png";
-import askIcon from "../images/askIcon.png";
-import showIcon from "../images/showIcon.png";
-import jobsIcon from "../images/jobsIcon.png";
+import NewIcon from "../images/newIcon.png";
+import TopIcon from "../images/topIcon.png";
+import AskIcon from "../images/askIcon.png";
+import ShowIcon from "../images/showIcon.png";
+import JobsIcon from "../images/jobsIcon.png";
+import { useMediaQuery } from "react-responsive";
 
 const Nav = styled.nav`
   width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: space-around;
   border-top: 1px solid #e8e8ed;
-  padding: 0 8px 32px;
+  padding: 0 0px 32px;
   position: absolute;
   bottom: 1px;
   background: rgba(255, 255, 255, 1);
@@ -30,7 +31,7 @@ const IconWrap = styled.div`
     font-weight: 400;
   }
   :first-of-type {
-    padding: 3px 15px 12px;
+    padding: 3px 14px 12px;
     p {
       position: absolute;
       bottom: -1.5px;
@@ -38,7 +39,7 @@ const IconWrap = styled.div`
     }
   }
   :nth-of-type(2) {
-    padding: 5px 18px 15px;
+    padding: 5px 17px 15px;
     p {
       position: absolute;
       bottom: -5px;
@@ -46,7 +47,7 @@ const IconWrap = styled.div`
     }
   }
   :nth-of-type(3) {
-    padding: 7px 20.77px 16.77px 19px;
+    padding: 7px 20.27px 16.27px 18px;
     p {
       position: absolute;
       bottom: -6px;
@@ -54,7 +55,7 @@ const IconWrap = styled.div`
     }
   }
   :nth-of-type(4) {
-    padding: 3px 17px 15px;
+    padding: 3px 16px 15px;
     p {
       position: absolute;
       bottom: -5px;
@@ -62,7 +63,7 @@ const IconWrap = styled.div`
     }
   }
   :last-child {
-    padding: 6px 21px 20px;
+    padding: 6px 20px 20px;
     p {
       position: absolute;
       bottom: -10px;
@@ -76,50 +77,54 @@ const Icon = styled.div`
   font-size: 8.5px;
   color: black;
 `;
-// activeStyle={activeStyle}
+
+const desctopNav = {
+  display: "flex",
+  position: "absolute",
+  top: "8px",
+  height: "fit-content",
+  padding: "0",
+  justifyContent: "center",
+  width: "fit-content",
+  right: "206px",
+  borderTop: "none"
+};
+
+const menuName = [
+  { name: "Top", image: TopIcon },
+  { name: "New", image: NewIcon },
+  { name: "Ask", image: AskIcon },
+  { name: "Show", image: ShowIcon },
+  { name: "Jobs", image: JobsIcon }
+];
+
 export const NavBar = () => {
+  const isMobileAndTablet = useMediaQuery({
+    query: "(min-width:320px) and (max-width:1399px)"
+  });
+
   return (
-    <Nav>
-      <IconWrap>
-        <NavLink to="/Top">
-          <Icon>
-            <img src={topIcon} alt="Top 아이콘 이미지" />
-            <p>Top</p>
-          </Icon>
-        </NavLink>
-      </IconWrap>
-      <IconWrap>
-        <NavLink to="/New">
-          <Icon>
-            <img src={newIcon} alt="Top 아이콘 이미지" />
-            <p>New</p>
-          </Icon>
-        </NavLink>
-      </IconWrap>
-      <IconWrap>
-        <NavLink to="/Ask">
-          <Icon>
-            <img src={askIcon} alt="Top 아이콘 이미지" />
-            <p>Ask</p>
-          </Icon>
-        </NavLink>
-      </IconWrap>
-      <IconWrap>
-        <NavLink to="/Show">
-          <Icon>
-            <img src={showIcon} alt="Top 아이콘 이미지" />
-            <p>Show</p>
-          </Icon>
-        </NavLink>
-      </IconWrap>
-      <IconWrap>
-        <NavLink to="/Jobs">
-          <Icon>
-            <img src={jobsIcon} alt="Top 아이콘 이미지" />
-            <p>Jobs</p>
-          </Icon>
-        </NavLink>
-      </IconWrap>
+    <Nav style={isMobileAndTablet ? { display: "flex" } : desctopNav}>
+      {menuName.map((item) => (
+        <IconWrap key={item.name}>
+          <NavLink to={`/${item.name}`}>
+            <Icon
+              style={
+                isMobileAndTablet ? { padding: "0px" } : { padding: "0 20px" }
+              }
+            >
+              <img
+                src={`${item.image}`}
+                alt={`${item.name} 아이콘 이미지`}
+                style={{ opacity: isMobileAndTablet ? "1" : "0" }}
+              />
+              <p style={{ fontSize: isMobileAndTablet ? "8.5px" : "xx-large" }}>
+                {item.name}
+              </p>
+            </Icon>
+          </NavLink>
+        </IconWrap>
+      ))}
     </Nav>
   );
 };

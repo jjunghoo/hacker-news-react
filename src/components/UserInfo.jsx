@@ -9,7 +9,8 @@ const UserDiv = styled.div`
   padding: 25px;
   color: #333;
   line-height: 1.5;
-  .goBack {
+  font-family: "Roboto";
+  div.goBack {
     width: max-content;
     cursor: pointer;
     font-size: 16px;
@@ -29,6 +30,9 @@ const UserDiv = styled.div`
   a {
     text-decoration: none;
     color: #333;
+    font-size: 14px;
+  }
+  div {
     font-size: 14px;
   }
 `;
