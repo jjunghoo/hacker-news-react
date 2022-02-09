@@ -26,9 +26,9 @@ export const Top = () => {
       setStoryIds(ids.map((data) => (data = { id: data, menuType: "top" })))
     );
   }, []);
-  // console.log(storyIds);
+
   return (
-    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "92vh" }}>
+    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
       <Banner>TOP</Banner>
       <ul>
         {storyIds.slice(0, 29).map((storyId, i) => (

@@ -27,7 +27,7 @@ export const Show = () => {
   }, []);
 
   return (
-    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "89.5vh" }}>
+    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
       <Banner>SHOW</Banner>
       <ul>
         {storyIds.slice(0, 29).map((storyId, i) => (

@@ -25,9 +25,9 @@ export const Jobs = () => {
       setStoryIds(ids.map((data) => (data = { id: data, menuType: "job" })))
     );
   }, []);
-  // console.log(storyIds);
+
   return (
-    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "89.5vh" }}>
+    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
       <Banner>JOBS</Banner>
       <ul>
         {storyIds.slice(0, 29).map((storyId, i) => (
