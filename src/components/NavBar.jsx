@@ -86,7 +86,7 @@ const desctopNav = {
   padding: "0",
   justifyContent: "center",
   width: "fit-content",
-  right: "206px",
+  left: "600px",
   borderTop: "none"
 };
 
@@ -110,7 +110,7 @@ export const NavBar = () => {
           <NavLink to={`/${item.name}`}>
             <Icon
               style={
-                isMobileAndTablet ? { padding: "0px" } : { padding: "0 20px" }
+                isMobileAndTablet ? { padding: "0px" } : { padding: "0 40px" }
               }
             >
               <img
@@ -118,7 +118,7 @@ export const NavBar = () => {
                 alt={`${item.name} 아이콘 이미지`}
                 style={{ opacity: isMobileAndTablet ? "1" : "0" }}
               />
-              <p style={{ fontSize: isMobileAndTablet ? "8.5px" : "xx-large" }}>
+              <p style={{ fontSize: isMobileAndTablet ? "8.5px" : "x-large" }}>
                 {item.name}
               </p>
             </Icon>

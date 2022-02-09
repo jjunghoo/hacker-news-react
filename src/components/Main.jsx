@@ -12,6 +12,7 @@ import { Show } from "./Show";
 import { Spinner } from "./Spinner";
 import { Top } from "./Top";
 import { UserInfo } from "./UserInfo";
+import { useMediaQuery } from "react-responsive";
 
 const Container = styled.div`
   /* width: 375px; */
@@ -23,6 +24,10 @@ const Container = styled.div`
 
 export const Main = () => {
   const [loading, setLoading] = useState(true);
+
+  const isMobileAndTablet = useMediaQuery({
+    query: "(min-width:320px) and (max-width:1399px)"
+  });
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,7 +42,7 @@ export const Main = () => {
           <Spinner />
         </Container>
       ) : (
-        <Container>
+        <Container style={{ height: isMobileAndTablet ? "85.5vh" : "91.5vh" }}>
           <SearchBar />
           <Routes>
             <Route path="/" element={<Home />} />
