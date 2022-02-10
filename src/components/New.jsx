@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { getStories } from "../service/hackerNewsAPI";
 import { Banner } from "./Banner";
 import { Story } from "./Story";
@@ -13,8 +13,16 @@ const WrapDiv = styled.ul`
   }
 `;
 
-export const New = () => {
+const MoreDiv = styled.div`
+  width: fit-content;
+  margin: 25px auto;
+  font-size: x-large;
+  cursor: pointer;
+`;
+
+export const New = memo(() => {
   const [storyIds, setStoryIds] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
 
   const isMobileAndTablet = useMediaQuery({
     query: "(min-width:320px) and (max-width:1399px)"
@@ -25,15 +33,24 @@ export const New = () => {
       setStoryIds(ids.map((data) => (data = { id: data, menuType: "new" })))
     );
   }, []);
-
+  console.log(startIndex);
   return (
     <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
-      <Banner>NEW</Banner>
-      <ul>
-        {storyIds.slice(0, 29).map((storyId, i) => (
-          <Story key={i} storyId={storyId} />
-        ))}
+      <Banner style={{ display: isMobileAndTablet ? "block" : "none" }}>
+        TOP
+      </Banner>
+      <ul style={{ margin: isMobileAndTablet ? "0" : "0 23%" }}>
+        {isMobileAndTablet
+          ? storyIds
+              .slice(0, 29)
+              .map((storyId, i) => <Story key={i} storyId={storyId} />)
+          : storyIds
+              .slice(startIndex * 10, startIndex * 10 + 10)
+              .map((storyId, i) => (
+                <Story key={i} storyId={storyId} index={startIndex * 10 + i} />
+              ))}
       </ul>
+      <MoreDiv onClick={() => setStartIndex(startIndex + 1)}>more</MoreDiv>
     </WrapDiv>
   );
-};
+});

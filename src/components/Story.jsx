@@ -3,12 +3,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { mapTime } from "../mappers/mapTimes";
 import { getStory } from "../service/hackerNewsAPI";
+import { useMediaQuery } from "react-responsive";
 
 const Li = styled.li`
   border-top: 1px solid #e8e8ed;
   padding: 20px;
+  position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  .storyIndex {
+    position: absolute;
+    font-size: xx-large;
+    top: 29px;
+    left: -50px;
+    color: #666;
+  }
   & .source {
     border: 1px solid rgba(144, 144, 144, 1);
     border-radius: 12.5px;
@@ -41,10 +50,14 @@ const Li = styled.li`
   }
 `;
 
-export const Story = ({ storyId }) => {
+export const Story = ({ storyId, index }) => {
   const [story, setStory] = useState([]);
   let menuType = storyId.menuType;
   if (menuType === "job") menuType = "jobs";
+
+  const isMobileAndTablet = useMediaQuery({
+    query: "(min-width:320px) and (max-width:1399px)"
+  });
 
   useEffect(() => {
     getStory(storyId.id).then((data) => setStory(data));
@@ -53,15 +66,25 @@ export const Story = ({ storyId }) => {
       setStory([]);
     };
   }, [storyId]);
-  // console.log(story);
+
   const { title, score, by, time, descendants, kids, url, id } = story;
 
   return (
-    <Li>
+    <Li style={{ padding: isMobileAndTablet ? "20px" : "7px" }}>
       {url && (
-        <div className="source">
-          <b>{url.split("/")[2].toUpperCase()}</b>
-        </div>
+        <>
+          {!isMobileAndTablet && <div className="storyIndex">{index + 1}</div>}
+          <div
+            className="source"
+            style={
+              isMobileAndTablet
+                ? { padding: "6px 10px" }
+                : { paddingLeft: "1px", border: "none" }
+            }
+          >
+            <b>{url.split("/")[2].toUpperCase()}</b>
+          </div>
+        </>
       )}
       {url ? (
         <a href={url} rel="noopener noreferrer" target="_blank">
@@ -76,8 +99,8 @@ export const Story = ({ storyId }) => {
           <p>{title}</p>
         </Link>
       )}
-      <div>
-        <span>
+      <div style={{ display: isMobileAndTablet ? "block" : "flex" }}>
+        <span style={{ marginRight: isMobileAndTablet ? "0" : "7px" }}>
           {score} points{" "}
           <Link
             to={`/user/${by}`}

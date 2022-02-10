@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const Div = styled.div`
   width: 375px;
-  height: 812px;
+  /* height: 812px; */
 `;
 
 const Img = styled.img`
