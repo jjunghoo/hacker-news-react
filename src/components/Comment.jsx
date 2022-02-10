@@ -38,6 +38,9 @@ const UserText = styled.p`
     color: #333333;
     font-weight: 600;
   }
+  code {
+    white-space: pre-wrap;
+  }
 `;
 
 const CommentDate = styled.p`
