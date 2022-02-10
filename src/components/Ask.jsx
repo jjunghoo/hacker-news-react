@@ -37,7 +37,7 @@ export const Ask = memo(() => {
   return (
     <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
       <Banner style={{ display: isMobileAndTablet ? "block" : "none" }}>
-        TOP
+        ASK
       </Banner>
       <ul style={{ margin: isMobileAndTablet ? "0" : "0 23%" }}>
         {isMobileAndTablet
