@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 const CommentWrap = styled.div`
   padding: 20px 10px 10px 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-wrap: anywhere;
 `;
 
 const UserProfile = styled.div`
