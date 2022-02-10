@@ -9,6 +9,9 @@ const CommentWrap = styled.div`
   padding: 20px 10px 10px 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   overflow-wrap: anywhere;
+  :first-of-type {
+    border-top: none;
+  }
 `;
 
 const UserProfile = styled.div`
@@ -30,6 +33,7 @@ const UserText = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 19.6px;
+  overflow-wrap: anywhere;
   a {
     color: #333333;
     font-weight: 600;

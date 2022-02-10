@@ -24,7 +24,7 @@ const IconWrap = styled.div`
     font-weight: 400;
   }
   :first-of-type {
-    padding: 3px 14px 44px;
+    padding: 3px 14px 0px;
     p {
       position: absolute;
       bottom: -1.5px;
