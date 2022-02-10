@@ -42,7 +42,7 @@ export const New = memo(() => {
       <ul style={{ margin: isMobileAndTablet ? "0" : "0 23%" }}>
         {isMobileAndTablet
           ? storyIds
-              .slice(0, 29)
+              .slice(startIndex * 10, startIndex * 10 + 10)
               .map((storyId, i) => <Story key={i} storyId={storyId} />)
           : storyIds
               .slice(startIndex * 10, startIndex * 10 + 10)
