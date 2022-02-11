@@ -61,10 +61,6 @@ export const Story = ({ storyId, index }) => {
 
   useEffect(() => {
     getStory(storyId.id).then((data) => setStory(data));
-
-    return () => {
-      setStory([]);
-    };
   }, [storyId]);
 
   const { title, score, by, time, descendants, kids, url, id } = story;
