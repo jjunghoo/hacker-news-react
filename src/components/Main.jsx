@@ -33,7 +33,7 @@ export const Main = () => {
 
   return (
     <>
-      {loading ? (
+      {loading && isMobileAndTablet ? (
         <Container>
           <Spinner />
         </Container>
