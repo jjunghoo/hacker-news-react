@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { getStories } from "../service/hackerNewsAPI";
 import { Banner } from "./Banner";
 import { Story } from "./Story";
@@ -24,6 +24,7 @@ const MoreDiv = styled.div`
 export const Top = memo(() => {
   const [storyIds, setStoryIds] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const ulRef = useRef();
 
   const isMobileAndTablet = useMediaQuery({
     query: "(min-width:320px) and (max-width:1399px)"
@@ -34,9 +35,12 @@ export const Top = memo(() => {
       setStoryIds(ids.map((data) => (data = { id: data, menuType: "top" })))
     );
   }, []);
-  console.log(startIndex);
+
   return (
-    <WrapDiv style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}>
+    <WrapDiv
+      style={{ height: isMobileAndTablet ? "85.5vh" : "88.5vh" }}
+      ref={ulRef}
+    >
       <Banner style={{ display: isMobileAndTablet ? "block" : "none" }}>
         TOP
       </Banner>
@@ -51,7 +55,14 @@ export const Top = memo(() => {
                 <Story key={i} storyId={storyId} index={startIndex * 10 + i} />
               ))}
       </ul>
-      <MoreDiv onClick={() => setStartIndex(startIndex + 1)}>more</MoreDiv>
+      <MoreDiv
+        onClick={() => {
+          setStartIndex(startIndex + 1);
+          ulRef.current.scrollTo(0, 0);
+        }}
+      >
+        more
+      </MoreDiv>
     </WrapDiv>
   );
 });

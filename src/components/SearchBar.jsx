@@ -42,25 +42,31 @@ const SearchImg = styled.div`
 `;
 
 export const SearchBar = () => {
-  const isMobileAndTablet = useMediaQuery({
-    query: "(min-width:320px) and (max-width:1399px)"
+  const isTablet = useMediaQuery({
+    query: "(min-width:1024px) and (max-width:1399px)"
+  });
+
+  const isMobile = useMediaQuery({
+    query: "(min-width:320px) and (max-width:1023px)"
   });
 
   return (
     <SearchWrap
-      style={{ padding: isMobileAndTablet ? "10px 22px" : "26px 22px" }}
+      style={{
+        padding: isMobile ? "10px 22px" : isTablet ? "15px 22px" : "26px 22px"
+      }}
     >
       <LogoAndTitle>
         <Link to="/">
           <img
             src="https://rawcdn.githack.com/jjunghoo/hacker-news-react/7733082f606483f0751f021fadd3a0350db6c7fb/src/images/homeIcon.png"
             alt="아이콘 로고 이미지"
-            style={{ width: isMobileAndTablet ? "20px" : "3vh" }}
+            style={{ width: isMobile ? "20px" : "3vh" }}
           />
         </Link>
         <span
           style={
-            isMobileAndTablet
+            isMobile
               ? { fontSize: "12px" }
               : { width: "fit-content", fontSize: "xx-large" }
           }
