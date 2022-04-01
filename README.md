@@ -1,9 +1,62 @@
 # hacker-news-react
 
-Created with CodeSandbox
+## 설명
+해커뉴스의 글을 읽을 수 있는 모바일 전용 Reader 사이트<br />
+<br />
 
-## CodeSandbox 주소
-https://codesandbox.io/s/github/jjunghoo/hacker-news-react
+#### 해커뉴스란 ?
+Paul Graham의 투자 펀드이자 스타트 업 인큐베이터 인 Y Combinator가<br>
+운영하고 있는 <u>컴퓨터 과학과 기업가 정신에 초점을 맞춘 소셜 뉴스 웹 사이트</u>
+
+<br />
 
 ## Demo
 https://hacker-news-react.vercel.app
+
+<br />
+
+## 사용기술
+
+프로그래밍 언어 : JavaScript
+
+UI 라이브러리 : React
+
+스타일링 : CSS in JS, SCSS
+
+상태 관리 : React Hooks
+
+빌드 도구 : Create React App
+
+라우트 : React Router 사용
+
+배포 : Vercel 활용
+
+<br />
+
+## 프로젝트 진행 과정
+1. UXUI 팀에서 만든 시안을 바탕으로 개발 가능 유무 검토
+
+2. 검토한 시안을 토대로 만든 프로토타입을 활용해 UXUI팀과 회의
+
+3. 중간 개발 과정에서 UXUI 팀으로부터 수정된 시안 전달 받음
+
+4. 수정된 시안대로 프로젝트 스타일 수정
+
+5. 반응형 디자인에 맞게 스타일 적용 (react-responsive 사용)
+
+6. 추가 사항 유무 확인
+
+7. 프로젝트 배포 (Vercel)
+
+<br />
+
+
+
+## 개선사항
+- 모바일과 테블릿화면에서 데이터를 불러오는 과정에서 로딩페이지가 필요하다고 생각된다.
+(사용자가 좀 더 자연스럽게 볼 수 있게)
+
+- 데스크탑 화면에서는 more 버튼을 클릭하면 추가적으로 10개의 글들을 불러올 수 있게 구성했지만,
+모바일과 테블릿 화면에서는 화면에서 보여지는 마지막 글 밑으로 슬라이드할 경우에
+추가적인 10개의 글들을 불러올 수 있게 해야 사용자에게 좀 더 편의성을 제공할 수 있을 것 같다.
+
