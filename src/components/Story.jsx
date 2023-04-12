@@ -56,7 +56,7 @@ export const Story = ({ storyId, index }) => {
   if (menuType === "job") menuType = "jobs";
 
   const isMobileAndTablet = useMediaQuery({
-    query: "(min-width:320px) and (max-width:1399px)"
+    query: "(min-width:320px) and (max-width:1399px)",
   });
 
   useEffect(() => {
@@ -69,7 +69,9 @@ export const Story = ({ storyId, index }) => {
     <Li style={{ padding: isMobileAndTablet ? "20px" : "7px" }}>
       {url && (
         <>
-          {!isMobileAndTablet && <div className="storyIndex">{index + 1}</div>}
+          {!isMobileAndTablet && (
+            <div className="storyIndex">{String(index + 1)}</div>
+          )}
           <div
             className="source"
             style={
